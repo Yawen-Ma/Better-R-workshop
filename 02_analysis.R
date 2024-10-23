@@ -1,15 +1,5 @@
 View(df)
 
-# histograms
-hist(df$Age) # don't use this
-hist(df$BMI)
-hist(df$Sleeptime)
-hist(df$AHI)
-# An AHI of 5-14 is mild; 15-29 is moderate and 30 or more events per hour characterizes severe sleep apnea.
-# All normal????
-# 1 = (AHI < 5); 2 = (5 ≤ AHI < 15);
-# 3 = (15 ≤ AHI < 30); 4 = (AHI ≥ 30)
-
 myfunction <- function() {
   df <- df |> mutate(Sex = if_else(Female == 1, "Female", "Male"), .after = Female) |> mutate(AHI = factor(AHI))
   return(df)
